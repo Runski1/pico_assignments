@@ -73,7 +73,7 @@ int main() {
   for (;;) {
     sleep_ms(1000);
     char str[128 / 8]; // max string to fit on one row
-    sprintf(str, "Time: %ds", ++i);
+    snprintf(str, sizeof(str), "Time: %ds", ++i);
     display.rect(0, 0, 128, 8, 0, 1);
     display.text(str, 0, 0, 1);
     display.show();
